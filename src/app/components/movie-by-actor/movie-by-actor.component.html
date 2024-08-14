@@ -1,0 +1,32 @@
+<h1>{{ actor }} Movies</h1>
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Title Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+    <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+  </ng-container>
+
+  <!-- Year Column -->
+  <ng-container matColumnDef="year">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Year</th>
+    <td mat-cell *matCellDef="let element">{{ element.year }}</td>
+  </ng-container>
+
+  <!-- Duration Column -->
+  <ng-container matColumnDef="parseDuration">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Duration</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.parseDuration }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr
+    mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    class="movie-row"
+  ></tr>
+</table>
