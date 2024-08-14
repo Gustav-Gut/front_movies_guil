@@ -1,0 +1,15 @@
+mat-list-item {
+  height: auto !important;
+}
+
+button {
+  margin: 1rem;
+}
+
+.movie-row {
+  cursor: pointer;
+}
+
+::ng-deep .movie-row:hover {
+  background-color: cadetblue;
+}
