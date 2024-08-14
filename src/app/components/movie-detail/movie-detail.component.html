@@ -1,0 +1,33 @@
+<div *ngIf="movie" class="movie-details">
+  <h1>{{ movie.title }} ({{ movie.year }})</h1>
+  <div class="container-detail">
+    <div class="container-img">
+      <img [src]="movie.posterImage" alt="Poster of {{ movie.title }}" />
+    </div>
+    <div class="container-info">
+      <p><strong>Genres:</strong> {{ movie.genres.join(", ") }}</p>
+      <p><strong>Duration:</strong> {{ movie.parseDuration }} minutes</p>
+      <p><strong>Storyline:</strong> {{ movie.storyline }}</p>
+      <p>
+        <strong>Actors:</strong>
+        <span
+          class="actor-item"
+          *ngFor="let actor of movie.actors; let i = index"
+          (click)="onActorClick(actor)"
+        >
+          {{ actor }}
+        </span>
+      </p>
+      <p><strong>Release Date:</strong> {{ movie.releaseDate }}</p>
+      <p><strong>Viewer Count:</strong> {{ movie.viewerCount }}</p>
+      <p><strong>Content Rating:</strong> {{ movie.contentRating }}</p>
+    </div>
+  </div>
+</div>
+<div *ngIf="!movie">
+  <p>No movie details available. Please select a movie from the list.</p>
+</div>
+<app-movie-by-actor
+  *ngIf="selectedActor"
+  [actor]="selectedActor"
+></app-movie-by-actor>
