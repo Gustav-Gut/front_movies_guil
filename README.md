@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
 
+To run this frontend project you need to use Node 20.9.0 and NPM 10.1.0
+
+That configuration should be enough. Next you just have to follow the instructions for creating an Angular project.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
